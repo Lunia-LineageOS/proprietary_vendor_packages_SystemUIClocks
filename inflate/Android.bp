@@ -1,0 +1,47 @@
+//
+// Copyright (C) 2025 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+android_app {
+    name: "SystemUIClocks-Inflate",
+
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
+    asset_dirs: ["assets"],
+    use_resource_processor: true,
+
+    kotlincflags: ["-Xjvm-default=all"],
+
+    libs: [
+        "SystemUIPluginLib",
+    ],
+    static_libs: [
+        "SystemUIClocks-CoreLib",
+    ],
+
+    certificate: "platform",
+    privileged: true,
+    system_ext_specific: true,
+    platform_apis: true,
+    min_sdk_version: "current",
+
+    optimize: {
+        enabled: true,
+        shrink_resources: true,
+        optimized_shrink_resources: true,
+        proguard_flags_files: ["proguard_inflate.flags"],
+        included_proguard_flags_files: [":sysui_proguard_common_and_kotlin"],
+    },
+}
