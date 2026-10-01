@@ -1,0 +1,4 @@
+-include ../../../../../../frameworks/base/packages/SystemUI/proguard_kotlin.flags
+
+-keepattributes Signature
+-keepclassmembers class com.android.systemui.clocks.numoverlap.R$* { public static <fields>; }

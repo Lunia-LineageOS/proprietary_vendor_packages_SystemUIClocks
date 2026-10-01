@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="clock_padding_start">28.0dp</dimen>
+    <dimen name="enhanced_smartspace_height">104.0dp</dimen>
+    <dimen name="weather_alarm_end_padding">18.0dp</dimen>
+    <dimen name="weather_clock_smartspace_bottom_margin">10.0dp</dimen>
+    <dimen name="weather_date_icon_padding">28.0dp</dimen>
+    <dimen name="weather_date_start_padding">14.0dp</dimen>
+    <dimen name="weather_temp_end_padding">18.0dp</dimen>
+    <dimen name="weather_time_start_padding">10.0dp</dimen>
+</resources>
