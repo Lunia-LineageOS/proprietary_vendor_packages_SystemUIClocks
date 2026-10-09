@@ -93,11 +93,11 @@ open class CustomDigitalTextView(private val clockCtx: CustomClockContext, font:
 
         val assets = clockCtx.assets
         val lockscreenColor =
-            assets.tryReadColor(lockscreenColorRes) ?: theme.getDefaultColor(clockCtx.context)
+            assets.tryReadColor(lockscreenColorRes) ?: theme.getDefaultColor(assets.hostCtx)
         val aodColor =
             assets.tryReadColor(aodColorRes)
                 ?: when (renderType) {
-                    RenderType.CHANGE_WEIGHT -> theme.getAodColor(clockCtx.context)
+                    RenderType.CHANGE_WEIGHT -> theme.getAodColor(assets.hostCtx)
                     RenderType.HOLLOW_TEXT,
                     RenderType.STROKE_TEXT,
                     RenderType.OUTER_OUTLINE_TEXT -> Color.TRANSPARENT

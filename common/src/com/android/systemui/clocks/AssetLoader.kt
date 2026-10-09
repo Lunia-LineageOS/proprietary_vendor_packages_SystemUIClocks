@@ -36,7 +36,7 @@ import kotlin.math.abs
 class AssetLoader
 private constructor(
     private val pluginCtx: Context,
-    private val hostCtx: Context,
+    val hostCtx: Context,
     private val baseDir: String,
     private var colorScheme: ColorScheme?,
     seedColor: Int?,
