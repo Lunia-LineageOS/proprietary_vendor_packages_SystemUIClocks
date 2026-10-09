@@ -298,6 +298,7 @@ class WeatherClockFaceLayoutLarge(
         val clockPaddingStart = resources.getDimensionPixelSize(R.dimen.clock_padding_start)
         val dateIconPadding = resources.getDimensionPixelSize(R.dimen.weather_date_icon_padding)
         val weatherIconId = view.weatherIconView.id
+        val alarmDndId = view.alarmDndIconView.id
         val temperatureId = view.temperatureView.id
 
         return constraints.apply {
@@ -347,6 +348,16 @@ class WeatherClockFaceLayoutLarge(
             )
             connect(
                 weatherIconId,
+                ConstraintSet.TOP,
+                ClockViewIds.WEATHER_CLOCK_DATE,
+                ConstraintSet.TOP,
+            )
+
+            constrainWidth(alarmDndId, ConstraintSet.WRAP_CONTENT)
+            constrainHeight(alarmDndId, ConstraintSet.WRAP_CONTENT)
+            connect(alarmDndId, ConstraintSet.END, temperatureId, ConstraintSet.END)
+            connect(
+                alarmDndId,
                 ConstraintSet.TOP,
                 ClockViewIds.WEATHER_CLOCK_DATE,
                 ConstraintSet.TOP,
